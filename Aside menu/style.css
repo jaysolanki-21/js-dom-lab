@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+main{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    height: 100%;
+    position: relative;
+}
+
+.menus{
+    position: absolute;
+    left: -20rem;
+    transition: all 0.5s ease-in-out;
+    width: 20rem;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.menucontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+}
+.menu:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.butttoncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closemenu{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.closemenu:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.menubtn{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    background-color: #fff;
+    display: block;
+}
+
+.menubtn:hover{
+    background-color: #000;
+    color: #fff;
+}
+
