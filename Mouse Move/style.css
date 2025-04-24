@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  cursor: none; 
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+h1 {
+  color: white;
+  font-size: 150px;
+}
+
+.pointer {
+  position: absolute;
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: mix-blend-mode 0.3s ease;
+  mix-blend-mode: normal;
+}
+
+.pointer.blend {
+  mix-blend-mode: difference;
+}
