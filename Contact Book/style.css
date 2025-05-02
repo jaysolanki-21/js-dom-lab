@@ -1,0 +1,534 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iphone {
+  width: 370px;
+  height: 100%;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.top-bar{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.top-bar .left-side {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.top-bar .left-side span {
+  font-size: 15px;
+  color: black;
+  font-weight: 900;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar .right-side {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.top-bar i {
+  font-size: 15px;
+  color: black;
+}
+
+.dynamic-island {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 25px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.screen-content {
+  padding: 80px 20px 20px 20px; 
+  text-align: center;
+  font-family: Arial, sans-serif;
+  display: none;
+}
+
+
+
+.contact-list {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 90%;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.data{
+  display: flex;
+}
+
+.profile {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+  margin-left: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.contact-list::-webkit-scrollbar {
+  display: none;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-name {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  margin-left: 20px;
+}
+
+.contact-name::selection {
+  background: none;
+}
+
+.contact-icon {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  margin-right: 20px;
+}
+
+i {
+  font-size: 22px;
+  color: green;
+}
+
+hr {
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact:hover {
+  background: #f5f5f5;
+}
+
+.calling {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: none;
+  left: 0;
+}
+
+.calling-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1710410798243-708f6cee5f51?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym95cyUyMG1vZGVsfGVufDB8fDB8fHww');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.callingscreen {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.callingscreen-name {
+  font-family: 'Inter Variable', sans-serif;
+  font-weight: 1000;
+  font-size: 25px;
+  color: black;
+}
+
+.callerbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.callerbutton i {
+  font-size: 30px;
+  color: black;
+  border-radius: 50%;
+}
+
+.upper,
+.lower {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.upper div,
+.lower div {
+  cursor: pointer;
+  padding: 12px;
+  background-color: #dadada;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 46PX;
+}
+
+.lower .endcall {
+  background-color: #ff4d4d !important;
+}
+
+.upper i,
+.lower i {
+  font-size: 25px;
+  color: black;
+}
+
+.upper span,
+.lower span {
+  font-size: 12px;
+  color: black;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+}
+
+.endcall i {
+  transform: rotate(135deg);
+  display: inline-block;
+}
+
+.callerbutton div span::selection {
+  background: none;
+}
+
+.callerbutton div i::selection {
+  background: none;
+}
+
+.contactinfo{
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%px;
+  height: 80%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: none;
+}
+
+.back{
+  cursor: pointer;
+  color: blue;
+}
+
+.ciimage{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.ciimage img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.contactinfo .ciname{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.contactinfo .cibutton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cimessage, .cicall, .civideo, .cimail {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.cimessage i, .cicall i, .civideo i, .cimail i {
+  font-size: 20px;
+  color: blue;
+}
+
+.cimessage:hover, .cicall:hover, .civideo:hover, .cimail:hover {
+  background-color: #dadada;
+}
+
+.cimessage span, .cicall span, .civideo span, .cimail span {
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciaddress{
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.ciaddress span{
+  font-size: 10px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciaddress :nth-child(1){
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciaddress :nth-child(2){
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cinumber{
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+
+}
+
+.cinumber span{
+  font-size: 10px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cinumber :nth-child(1){
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cinumber :nth-child(2){
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cibirthday{
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+
+}
+
+.cibirthday span{
+  font-size: 10px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cibirthday :nth-child(1){
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.cibirthday :nth-child(2){
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciemail{
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+
+}
+
+.ciemail span{
+  font-size: 10px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciemail :nth-child(1){
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.ciemail :nth-child(2){
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.callingdisplay{
+  color: black;
+  font-size: 15px;
+  font-weight: 900;
+  text-align: left;
+  margin-top: 5px;
+  font-family: 'Inter Variable', sans-serif;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 50px;
+}
