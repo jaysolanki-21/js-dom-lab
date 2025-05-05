@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  main {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  main .hour,
+  main .minute,
+  main .second {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .digit {
+    position: relative;
+    overflow: hidden;
+    width: 6rem;
+    height: 8rem;
+    border: 2px solid white;
+    border-radius: 10%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .digit span {
+    display: block;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .extra .ampm {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+@media screen and (max-width: 600px) {
+    main {
+      flex-direction: column;
+    }
+    
+}
+  
